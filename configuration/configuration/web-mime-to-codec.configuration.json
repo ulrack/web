@@ -1,0 +1,5 @@
+{
+    "$schema": "configuration.schema.json",
+    "key": "web-mime-to-codec",
+    "location": "configuration/web-mime-to-codec"
+}
