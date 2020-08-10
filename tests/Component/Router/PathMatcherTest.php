@@ -62,7 +62,7 @@ class PathMatcherTest extends TestCase
                 '/foo/bar/baz/1/',
                 'foo/bar/baz/1',
                 [
-                    'path' => 'foo/bar/baz/1',
+                    'path' => '',
                     'parameters' => []
                 ]
             ],
@@ -70,7 +70,7 @@ class PathMatcherTest extends TestCase
                 'foo/bar/baz/1',
                 'foo/bar/baz/1',
                 [
-                    'path' => 'foo/bar/baz/1',
+                    'path' => '',
                     'parameters' => []
                 ]
             ],
@@ -83,7 +83,7 @@ class PathMatcherTest extends TestCase
                 'foo/bar/baz/{param1}',
                 'foo/bar/baz/1',
                 [
-                    'path' => 'foo/bar/baz/1',
+                    'path' => '',
                     'parameters' => [
                         'param1' => 1
                     ]

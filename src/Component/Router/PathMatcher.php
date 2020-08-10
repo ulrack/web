@@ -28,7 +28,7 @@ class PathMatcher implements PathMatcherInterface
 
         if ($routePath === '') {
             return [
-                'path' => $path,
+                'path' => trim($path, '/'),
                 'parameters' => []
             ];
         }
@@ -90,6 +90,6 @@ class PathMatcher implements PathMatcherInterface
         return preg_replace(sprintf(
             '/^%s/',
             preg_quote($strip . '/', '/')
-        ), '', $path, 1);
+        ), '', trim($path, '/') . '/', 1);
     }
 }
