@@ -1,22 +1,22 @@
 # Ulrack Web - Route group
 
-A route group defines the initial connection to the application.
-It is described by the `route-group.schema.json` schema.
+A route group defines the initial connection to the application. This is handled
+through the services layer.
 
 An example definition looks like the following:
 ```json
 {
-    "$schema": "route-group.schema.json",
-    "key": "main",
-    "ports": [
-        80,
-        443
-    ],
-    "hosts": [
-        "*.example.com*"
-    ],
-    "route": "main-home",
-    "errorRegistryService": "services.web.errors.default.api.registry"
+    "main": {
+        "ports": [
+            80,
+            443
+        ],
+        "hosts": [
+            "*.example.com*"
+        ],
+        "route": "main-home",
+        "errorRegistryService": "services.web.errors.default.api.registry"
+    }
 }
 ```
 

@@ -13,7 +13,6 @@ use Ulrack\Web\Exception\UnauthorizedException;
 use Ulrack\Services\Common\ServiceFactoryInterface;
 use Ulrack\Web\Common\Request\AuthorizationInterface;
 use Ulrack\Web\Common\Request\AuthorizationHandlerInterface;
-use Ulrack\Web\Common\Registry\AuthorizationRegistryInterface;
 
 class AuthorizationHandler implements AuthorizationHandlerInterface
 {
@@ -32,24 +31,13 @@ class AuthorizationHandler implements AuthorizationHandlerInterface
     private $authorizers;
 
     /**
-     * Contains the registered authorization services.
-     *
-     * @var AuthorizationRegistryInterface
-     */
-    private $registry;
-
-    /**
      * Constructor.
      *
      * @param ServiceFactoryInterface $serviceFactory
-     * @param AuthorizationRegistryInterface $registry
      */
-    public function __construct(
-        ServiceFactoryInterface $serviceFactory,
-        AuthorizationRegistryInterface $registry
-    ) {
+    public function __construct(ServiceFactoryInterface $serviceFactory)
+    {
         $this->serviceFactory = $serviceFactory;
-        $this->registry = $registry;
     }
 
     /**
@@ -88,15 +76,7 @@ class AuthorizationHandler implements AuthorizationHandlerInterface
     private function getAuthorizationByKey(string $key): AuthorizationInterface
     {
         if (!isset($this->authorizers[$key])) {
-            if (!$this->registry->has($key)) {
-                throw new UnauthorizedException(
-                    'Misconfigured authorization detected'
-                );
-            }
-
-            $this->authorizers[$key] = $this->serviceFactory->create(
-                $this->registry->get($key)
-            );
+            $this->authorizers[$key] = $this->serviceFactory->create($key);
         }
 
         return $this->authorizers[$key];

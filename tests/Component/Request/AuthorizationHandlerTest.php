@@ -32,28 +32,17 @@ class AuthorizationHandlerTest extends TestCase
     public function testPass(): void
     {
         $serviceFactory = $this->createMock(ServiceFactoryInterface::class);
-        $registry = $this->createMock(AuthorizationRegistryInterface::class);
-        $subject = new AuthorizationHandler($serviceFactory, $registry);
+        $subject = new AuthorizationHandler($serviceFactory);
         $authorization = $this->createMock(AuthorizationInterface::class);
 
         $authorizationKeys = ['foo'];
         $input = $this->createMock(InputInterface::class);
         $output = $this->createMock(OutputInterface::class);
 
-        $registry->expects(static::once())
-            ->method('has')
-            ->with('foo')
-            ->willReturn(true);
-
         $serviceFactory->expects(static::once())
             ->method('create')
-            ->with('bar')
-            ->willReturn($authorization);
-
-        $registry->expects(static::once())
-            ->method('get')
             ->with('foo')
-            ->willReturn('bar');
+            ->willReturn($authorization);
 
         $authorization->expects(static::once())
             ->method('isAllowed')
@@ -76,28 +65,17 @@ class AuthorizationHandlerTest extends TestCase
     public function testNoPass(): void
     {
         $serviceFactory = $this->createMock(ServiceFactoryInterface::class);
-        $registry = $this->createMock(AuthorizationRegistryInterface::class);
-        $subject = new AuthorizationHandler($serviceFactory, $registry);
+        $subject = new AuthorizationHandler($serviceFactory);
         $authorization = $this->createMock(AuthorizationInterface::class);
 
         $authorizationKeys = ['foo'];
         $input = $this->createMock(InputInterface::class);
         $output = $this->createMock(OutputInterface::class);
 
-        $registry->expects(static::once())
-            ->method('has')
-            ->with('foo')
-            ->willReturn(true);
-
         $serviceFactory->expects(static::once())
             ->method('create')
-            ->with('bar')
-            ->willReturn($authorization);
-
-        $registry->expects(static::once())
-            ->method('get')
             ->with('foo')
-            ->willReturn('bar');
+            ->willReturn($authorization);
 
         $authorization->expects(static::once())
             ->method('isAllowed')
@@ -108,32 +86,5 @@ class AuthorizationHandlerTest extends TestCase
             false,
             $subject->pass($authorizationKeys, $input, $output)
         );
-    }
-
-    /**
-     * @covers ::pass
-     * @covers ::getAuthorizationByKey
-     * @covers ::__construct
-     *
-     * @return void
-     */
-    public function testPassError(): void
-    {
-        $serviceFactory = $this->createMock(ServiceFactoryInterface::class);
-        $registry = $this->createMock(AuthorizationRegistryInterface::class);
-        $subject = new AuthorizationHandler($serviceFactory, $registry);
-
-        $authorizationKeys = ['foo'];
-        $input = $this->createMock(InputInterface::class);
-        $output = $this->createMock(OutputInterface::class);
-
-        $registry->expects(static::once())
-            ->method('has')
-            ->with('foo')
-            ->willReturn(false);
-
-        $this->expectException(UnauthorizedException::class);
-
-        $subject->pass($authorizationKeys, $input, $output);
     }
 }

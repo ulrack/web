@@ -1,19 +1,19 @@
 # Ulrack Web - Route group
 
-A route defines the path of an endpoint and sub-routes.
-It is described by the `route.schema.json` schema.
+A route defines the path of an endpoint and sub-routes. It is handled through
+the services layer.
 
 An example definition looks like the following:
 ```json
 {
-    "$schema": "route.schema.json",
-    "key": "main-home",
-    "path": "/",
-    "service": "services.main-home-endpoint",
-    "methods": [
-        "GET"
-    ],
-    "outputService": "services.web.handler.output"
+    "main-home": {
+        "path": "/",
+        "service": "services.main-home-endpoint",
+        "methods": [
+            "GET"
+        ],
+        "outputService": "services.web.handler.output"
+    }
 }
 ```
 

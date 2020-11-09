@@ -1,0 +1,5 @@
+{
+    "$schema": "configuration.schema.json",
+    "key": "route-groups",
+    "location": "configuration/route-groups"
+}

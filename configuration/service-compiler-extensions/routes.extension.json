@@ -1,0 +1,44 @@
+{
+    "$schema": "service.compiler.extension.schema.json",
+    "class": "\\Ulrack\\Web\\Component\\Compiler\\Extension\\RoutesCompiler",
+    "sortOrder": 0,
+    "key": "routes",
+    "schema": {
+        "type": "object",
+        "properties": {
+            "path": {
+                "type": "string",
+                "pattern": "^[\\w\\/{}\\.~-]*$"
+            },
+            "service": {
+                "type": "string"
+            },
+            "methods": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "authorizationServices": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "outputService": {
+                "type": "string"
+            },
+            "errorRegistryService": {
+                "type": "string"
+            },
+            "parent": {
+                "type": "string"
+            },
+            "weight": {
+                "type": "integer",
+                "default": 1000
+            }
+        },
+        "required": ["path", "service", "methods"]
+    }
+}

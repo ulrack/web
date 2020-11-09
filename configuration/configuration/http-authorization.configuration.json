@@ -1,5 +1,0 @@
-{
-    "$schema": "configuration.schema.json",
-    "key": "http-authorization",
-    "location": "configuration/http-authorization"
-}

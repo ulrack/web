@@ -1,0 +1,40 @@
+{
+    "$schema": "service.compiler.extension.schema.json",
+    "class": "\\Ulrack\\Web\\Component\\Compiler\\Extension\\RouteGroupsCompiler",
+    "sortOrder": 10,
+    "key": "route-groups",
+    "schema": {
+        "type": "object",
+        "properties": {
+            "ports": {
+                "type": "array",
+                "items": {
+                    "type": "integer"
+                }
+            },
+            "hosts": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "authorizationServices": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "route": {
+                "type": "string"
+            },
+            "errorRegistryService": {
+                "type": "string"
+            },
+            "weight": {
+                "type": "integer",
+                "default": 1000
+            }
+        },
+        "required": ["ports", "hosts", "route", "errorRegistryService"]
+    }
+}
