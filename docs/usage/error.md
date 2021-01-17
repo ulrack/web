@@ -29,10 +29,8 @@ A definition for an error looks like the following:
 
 [Request codecs](request-codecs.md)
 
-[Route group](route-group.md)
-
-[Route](route.md)
-
-[Authorization](authorization.md)
-
 [Endpoint](endpoint.md)
+
+[Middleware](middleware.md)
+
+[Routers](routers.md)

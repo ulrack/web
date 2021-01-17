@@ -1,5 +1,0 @@
-{
-    "$schema": "service.factory.extension.schema.json",
-    "class": "\\Ulrack\\Web\\Factory\\Extension\\RoutesFactory",
-    "key": "routes"
-}

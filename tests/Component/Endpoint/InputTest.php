@@ -34,6 +34,7 @@ class InputTest extends TestCase
      * @covers ::hasParameter
      * @covers ::getParameter
      * @covers ::setParameter
+     * @covers ::getParameters
      * @covers ::getParameterKeys
      * @covers ::__construct
      *
@@ -51,5 +52,6 @@ class InputTest extends TestCase
         $this->assertEquals(true, $subject->hasParameter($key));
         $this->assertEquals($value, $subject->getParameter($key));
         $this->assertEquals(['foo'], $subject->getParameterKeys());
+        $this->assertEquals(['foo' => 'bar'], $subject->getParameters());
     }
 }

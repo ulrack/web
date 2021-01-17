@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * Copyright (C) GrizzIT, Inc. All rights reserved.
+ * See LICENSE for license details.
+ */
+
+namespace Ulrack\Web\Tests\Component\Endpoint;
+
+use PHPUnit\Framework\TestCase;
+use GrizzIt\Http\Common\Request\UriInterface;
+use Ulrack\Web\Common\Endpoint\InputInterface;
+use Ulrack\Web\Common\Endpoint\OutputInterface;
+use GrizzIt\Http\Common\Request\RequestInterface;
+use Ulrack\Web\Component\Middleware\HostMatchingMiddleware;
+
+/**
+ * @coversDefaultClass \Ulrack\Web\Component\Middleware\HostMatchingMiddleware
+ */
+class HostMatchingMiddlewareTest extends TestCase
+{
+    /**
+     * @return void
+     *
+     * @covers ::__construct
+     * @covers ::getErrorCode
+     * @covers ::pass
+     */
+    public function testComponent(): void
+    {
+        $subject = new HostMatchingMiddleware('foo.bar', 'baz.qux');
+        $this->assertEquals(404, $subject->getErrorCode());
+        $input = $this->createMock(InputInterface::class);
+        $output = $this->createMock(OutputInterface::class);
+        $request = $this->createMock(RequestInterface::class);
+        $uri = $this->createMock(UriInterface::class);
+
+        $input->expects(static::once())
+            ->method('getRequest')
+            ->willReturn($request);
+
+        $request->expects(static::once())
+            ->method('getUri')
+            ->willReturn($uri);
+
+        $uri->expects(static::once())
+            ->method('getHost')
+            ->willReturn('baz.qux');
+
+        $this->assertEquals(true, $subject->pass($input, $output));
+    }
+
+    /**
+     * @return void
+     *
+     * @covers ::__construct
+     * @covers ::pass
+     */
+    public function testComponentFail(): void
+    {
+        $subject = new HostMatchingMiddleware('foo.bar');
+        $input = $this->createMock(InputInterface::class);
+        $output = $this->createMock(OutputInterface::class);
+        $request = $this->createMock(RequestInterface::class);
+        $uri = $this->createMock(UriInterface::class);
+
+        $input->expects(static::once())
+            ->method('getRequest')
+            ->willReturn($request);
+
+        $request->expects(static::once())
+            ->method('getUri')
+            ->willReturn($uri);
+
+        $uri->expects(static::once())
+            ->method('getHost')
+            ->willReturn('baz.qux');
+
+        $this->assertEquals(false, $subject->pass($input, $output));
+    }
+}

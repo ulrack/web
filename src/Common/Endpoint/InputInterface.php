@@ -37,6 +37,13 @@ interface InputInterface
     public function getParameter(string $key);
 
     /**
+     * Retrieves all parameters.
+     *
+     * @return array
+     */
+    public function getParameters(): array;
+
+    /**
      * Sets a parameter.
      *
      * @param string $key

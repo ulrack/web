@@ -9,12 +9,10 @@ configured. By default only the JSON codec is defined.
 
 [Back to usage index](index.md)
 
-[Route group](route-group.md)
-
-[Route](route.md)
-
 [Error](error.md)
 
-[Authorization](authorization.md)
-
 [Endpoint](endpoint.md)
+
+[Middleware](middleware.md)
+
+[Routers](routers.md)

@@ -44,10 +44,8 @@ response.
 
 [Request codecs](request-codecs.md)
 
-[Route group](route-group.md)
-
-[Route](route.md)
-
 [Error](error.md)
 
-[Authorization](authorization.md)
+[Middleware](middleware.md)
+
+[Routers](routers.md)

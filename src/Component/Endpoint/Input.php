@@ -71,6 +71,16 @@ class Input implements InputInterface
     }
 
     /**
+     * Retrieves all parameters.
+     *
+     * @return array
+     */
+    public function getParameters(): array
+    {
+        return $this->parameters;
+    }
+
+    /**
      * Sets a parameter.
      *
      * @param string $key

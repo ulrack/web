@@ -13,6 +13,19 @@ use Ulrack\Web\Common\Endpoint\OutputInterface;
 interface RouterInterface
 {
     /**
+     * Determines whether the router accepts the request.
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     *
+     * @return bool
+     */
+    public function accepts(
+        InputInterface $input,
+        OutputInterface $output
+    ): bool;
+
+    /**
      * Resolves the request to an endpoint, executes it and renders the response.
      *
      * @param InputInterface $input
