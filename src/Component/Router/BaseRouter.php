@@ -104,6 +104,8 @@ class BaseRouter implements RouterInterface
     ): void {
         if (!$this->found) {
             $this->errorHandler->outputByCode(404);
+
+            return;
         }
 
         try {
