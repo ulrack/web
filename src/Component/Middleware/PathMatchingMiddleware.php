@@ -81,6 +81,7 @@ class PathMatchingMiddleware implements MiddlewareInterface
         string $path
     ): ?array {
         $route = trim($route, '/');
+        $path = trim($path, '/');
 
         $matchParam = preg_match(
             '/{[^\/]+}/',
