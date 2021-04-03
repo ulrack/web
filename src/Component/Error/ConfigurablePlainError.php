@@ -19,29 +19,28 @@ class ConfigurablePlainError implements ErrorInterface
      *
      * @var int
      */
-    private $errorStatusCode;
+    private int $errorStatusCode;
 
     /**
      * Contains the error code.
      *
-     * @var int
+     * @var int|null
      */
-    private $errorCode;
+    private ?int $errorCode;
 
     /**
      * Contains the error message.
      *
-     * @var string
+     * @var string|null
      */
-    private $errorMessage;
+    private ?string $errorMessage;
 
     /**
      * Constructor.
      *
      * @param int $errorStatusCode
-     * @param int $errorCode
-     * @param string $errorMessage
-     * @param string $defaultContentType
+     * @param int|null $errorCode
+     * @param string|null $errorMessage
      */
     public function __construct(
         int $errorStatusCode,

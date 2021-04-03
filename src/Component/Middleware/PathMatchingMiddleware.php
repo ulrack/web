@@ -18,7 +18,7 @@ class PathMatchingMiddleware implements MiddlewareInterface
      *
      * @var string
      */
-    private $route;
+    private string $route;
 
     /**
      * Constructor.

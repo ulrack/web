@@ -17,7 +17,7 @@ class HttpException extends Exception
      *
      * @var int
      */
-    private $errorCode;
+    private int $errorCode;
 
     /**
      * Constructor.

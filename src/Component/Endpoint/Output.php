@@ -16,49 +16,49 @@ class Output implements OutputInterface
      *
      * @var string
      */
-    private $protocol;
+    private string $protocol;
 
     /**
      * Contains the status code for the response.
      *
      * @var int
      */
-    private $statusCode = 200;
+    private int $statusCode = 200;
 
     /**
      * Contains the headers for the response.
      *
      * @var string[]
      */
-    private $headers = [];
+    private array $headers = [];
 
     /**
      * Contains the parameters.
      *
      * @var array
      */
-    private $parameters = [];
+    private array $parameters = [];
 
     /**
      * Contains the chosen content type.
      *
      * @var string
      */
-    private $contentType = '';
+    private string $contentType = '';
 
     /**
      * Contains the output of the response.
      *
      * @var mixed
      */
-    private $output;
+    private mixed $output;
 
     /**
      * Contains the accepted content types.
      *
      * @var string[]
      */
-    private $acceptedContentTypes;
+    private array $acceptedContentTypes;
 
     /**
      * Constructor.
@@ -78,7 +78,7 @@ class Output implements OutputInterface
      *
      * @return mixed
      */
-    public function getOutput()
+    public function getOutput(): mixed
     {
         return $this->output;
     }
@@ -90,7 +90,7 @@ class Output implements OutputInterface
      *
      * @return void
      */
-    public function setOutput($output): void
+    public function setOutput(mixed $output): void
     {
         $this->output = $output;
     }
@@ -237,7 +237,7 @@ class Output implements OutputInterface
      *
      * @return mixed
      */
-    public function getParameter(string $key)
+    public function getParameter(string $key): mixed
     {
         return $this->parameters[$key];
     }
@@ -250,7 +250,7 @@ class Output implements OutputInterface
      *
      * @return void
      */
-    public function setParameter(string $key, $value): void
+    public function setParameter(string $key, mixed $value): void
     {
         $this->parameters[$key] = $value;
     }

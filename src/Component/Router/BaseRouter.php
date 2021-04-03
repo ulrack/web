@@ -13,8 +13,8 @@ use Ulrack\Web\Common\Endpoint\InputInterface;
 use Ulrack\Web\Common\Endpoint\OutputInterface;
 use Ulrack\Web\Common\Endpoint\EndpointInterface;
 use Ulrack\Web\Common\Error\ErrorHandlerInterface;
-use Ulrack\Services\Common\ServiceFactoryInterface;
 use Ulrack\Web\Common\Output\OutputHandlerInterface;
+use GrizzIt\Services\Common\Factory\ServiceFactoryInterface;
 
 class BaseRouter implements RouterInterface
 {
@@ -23,35 +23,35 @@ class BaseRouter implements RouterInterface
      *
      * @var RouterInterface
      */
-    private $router;
+    private RouterInterface $router;
 
     /**
      * Determines whether a router has been found.
      *
      * @var bool
      */
-    private $found = false;
+    private bool $found = false;
 
     /**
      * Contains the output handler.
      *
      * @var OutputHandlerInterface
      */
-    private $outputHandler;
+    private OutputHandlerInterface $outputHandler;
 
     /**
      * Contains the error handler.
      *
      * @var ErrorHandlerInterface
      */
-    private $errorHandler;
+    private ErrorHandlerInterface $errorHandler;
 
     /**
      * Contains the service factory.
      *
      * @var ServiceFactoryInterface
      */
-    private $serviceFactory;
+    private ServiceFactoryInterface $serviceFactory;
 
     /**
      * Constructor.

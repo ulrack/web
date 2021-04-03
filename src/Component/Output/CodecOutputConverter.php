@@ -20,14 +20,14 @@ class CodecOutputConverter implements OutputConverterInterface
      *
      * @var TranslatorInterface
      */
-    private $mimeToCodec;
+    private TranslatorInterface $mimeToCodec;
 
     /**
      * Contains the codec registry.
      *
      * @var CodecRegistryInterface
      */
-    private $codecRegistry;
+    private CodecRegistryInterface $codecRegistry;
 
     /**
      * Constructor.

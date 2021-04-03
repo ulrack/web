@@ -17,7 +17,7 @@ class ErrorRegistry implements ErrorRegistryInterface
      *
      * @var ErrorInterface[]
      */
-    private $errors;
+    private array $errors;
 
     /**
      * Constructor.

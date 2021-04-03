@@ -17,14 +17,14 @@ class Input implements InputInterface
      *
      * @var RequestInterface
      */
-    private $request;
+    private RequestInterface $request;
 
     /**
      * Contains the parameters for the input.
      *
      * @var array
      */
-    private $parameters = [];
+    private array $parameters = [];
 
     /**
      * Constructor.
@@ -65,7 +65,7 @@ class Input implements InputInterface
      *
      * @return mixed
      */
-    public function getParameter(string $key)
+    public function getParameter(string $key): mixed
     {
         return $this->parameters[$key];
     }
@@ -88,7 +88,7 @@ class Input implements InputInterface
      *
      * @return void
      */
-    public function setParameter(string $key, $value): void
+    public function setParameter(string $key, mixed $value): void
     {
         $this->parameters[$key] = $value;
     }

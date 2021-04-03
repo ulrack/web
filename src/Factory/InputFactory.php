@@ -26,28 +26,28 @@ class InputFactory
      *
      * @var TranslatorInterface
      */
-    private $mimeToCodec;
+    private TranslatorInterface $mimeToCodec;
 
     /**
      * Contains the codec registry.
      *
      * @var CodecRegistryInterface
      */
-    private $codecRegistry;
+    private CodecRegistryInterface $codecRegistry;
 
     /**
      * Contains the URI factory.
      *
      * @var UriFactory
      */
-    private $uriFactory;
+    private UriFactory $uriFactory;
 
     /**
      * Contains the identifier of the input stream.
      *
      * @var string
      */
-    private $inputStream;
+    private string $inputStream;
 
     /**
      * Constructor.

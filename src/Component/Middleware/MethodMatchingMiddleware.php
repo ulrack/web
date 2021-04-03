@@ -18,7 +18,7 @@ class MethodMatchingMiddleware implements MiddlewareInterface
      *
      * @var string[]
      */
-    private $methods;
+    private array $methods;
 
     /**
      * Constructor.

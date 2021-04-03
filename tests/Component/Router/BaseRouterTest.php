@@ -9,14 +9,14 @@ namespace Ulrack\Web\Tests\Component\Endpoint;
 
 use PHPUnit\Framework\TestCase;
 use Ulrack\Web\Component\Router\BaseRouter;
-use Ulrack\Web\Exception\UnauthorizedException;
 use Ulrack\Web\Common\Router\RouterInterface;
 use Ulrack\Web\Common\Endpoint\InputInterface;
 use Ulrack\Web\Common\Endpoint\OutputInterface;
+use Ulrack\Web\Exception\UnauthorizedException;
 use Ulrack\Web\Common\Endpoint\EndpointInterface;
 use Ulrack\Web\Common\Error\ErrorHandlerInterface;
-use Ulrack\Services\Common\ServiceFactoryInterface;
 use Ulrack\Web\Common\Output\OutputHandlerInterface;
+use GrizzIt\Services\Common\Factory\ServiceFactoryInterface;
 
 /**
  * @coversDefaultClass \Ulrack\Web\Component\Router\BaseRouter

@@ -18,7 +18,7 @@ class HostMatchingMiddleware implements MiddlewareInterface
      *
      * @var string[]
      */
-    private $hosts;
+    private array $hosts;
 
     /**
      * Constructor.

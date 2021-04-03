@@ -18,14 +18,14 @@ class MiddlewareAggregate implements MiddlewareInterface
      *
      * @var MiddlewareInterface[]
      */
-    private $middlewares;
+    private array $middlewares;
 
     /**
      * Contains the last error code.
      *
      * @var int
      */
-    private $lastErrorCode = 500;
+    private int $lastErrorCode = 500;
 
     /**
      * Constructor.

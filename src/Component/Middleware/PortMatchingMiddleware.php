@@ -18,7 +18,7 @@ class PortMatchingMiddleware implements MiddlewareInterface
      *
      * @var int[]
      */
-    private $ports;
+    private array $ports;
 
     /**
      * Constructor.

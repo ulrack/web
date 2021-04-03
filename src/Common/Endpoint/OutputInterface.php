@@ -14,7 +14,7 @@ interface OutputInterface
      *
      * @return mixed
      */
-    public function getOutput();
+    public function getOutput(): mixed;
 
     /**
      * Sets the value of the output.
@@ -23,7 +23,7 @@ interface OutputInterface
      *
      * @return void
      */
-    public function setOutput($output): void;
+    public function setOutput(mixed $output): void;
 
     /**
      * Sets the serving protocol.

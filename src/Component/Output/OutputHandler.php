@@ -21,14 +21,14 @@ class OutputHandler implements OutputHandlerInterface
      *
      * @var OutputConverterInterface[]
      */
-    private $outputConverters;
+    private array $outputConverters;
 
     /**
      * Contains the header handler.
      *
      * @var HeaderHandlerInterface
      */
-    private $headerHandler;
+    private HeaderHandlerInterface $headerHandler;
 
     /**
      * Constructor.

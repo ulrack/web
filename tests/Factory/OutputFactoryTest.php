@@ -47,4 +47,29 @@ class OutputFactoryTest extends TestCase
 
         $this->assertInstanceOf(OutputInterface::class, $subject->create($input));
     }
+
+    /**
+     * @covers ::create
+     * @covers ::parseAcceptHeader
+     *
+     * @return void
+     */
+    public function testCreateNoAccept(): void
+    {
+        $subject = new OutputFactory();
+
+        $input = $this->createMock(InputInterface::class);
+        $request = $this->createMock(RequestInterface::class);
+
+        $input->expects(static::once())
+            ->method('getRequest')
+            ->willReturn($request);
+
+        $request->expects(static::once())
+            ->method('hasHeader')
+            ->with('Accept')
+            ->willReturn(false);
+
+        $this->assertInstanceOf(OutputInterface::class, $subject->create($input));
+    }
 }

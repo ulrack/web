@@ -13,11 +13,13 @@ services. These are
 A definition for an error looks like the following:
 ```json
 {
-    "web.errors.default.api.400": {
-        "class": "\\Ulrack\\Web\\Component\\Error\\ConfigurableApiError",
-        "parameters": {
-            "errorStatusCode": 400,
-            "errorMessage": "Bad Request"
+    "services": {
+        "web.errors.default.api.400": {
+            "class": "\\Ulrack\\Web\\Component\\Error\\ConfigurableApiError",
+            "parameters": {
+                "errorStatusCode": 400,
+                "errorMessage": "Bad Request"
+            }
         }
     }
 }

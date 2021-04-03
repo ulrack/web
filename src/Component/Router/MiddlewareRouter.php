@@ -20,21 +20,21 @@ class MiddlewareRouter implements RouterInterface
      *
      * @var RouterInterface
      */
-    private $router;
+    private RouterInterface $router;
 
     /**
      * Contains the middleware that takes care of the accepts method.
      *
      * @var MiddlewareInterface|null
      */
-    private $middlewareAccept;
+    private ?MiddlewareInterface $middlewareAccept;
 
     /**
      * Contains the middleware that takes care of the invoke method.
      *
      * @var MiddlewareInterface|null
      */
-    private $middlewareInvoke;
+    private ?MiddlewareInterface $middlewareInvoke;
 
     /**
      * Constructor.

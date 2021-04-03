@@ -34,7 +34,7 @@ interface InputInterface
      *
      * @return mixed
      */
-    public function getParameter(string $key);
+    public function getParameter(string $key): mixed;
 
     /**
      * Retrieves all parameters.
@@ -51,7 +51,7 @@ interface InputInterface
      *
      * @return void
      */
-    public function setParameter(string $key, $value): void;
+    public function setParameter(string $key, mixed $value): void;
 
     /**
      * Retrieves a list of keys of available parameters.

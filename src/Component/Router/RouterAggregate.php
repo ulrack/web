@@ -19,14 +19,14 @@ class RouterAggregate implements RouterInterface
      *
      * @var RouterInterface[]
      */
-    private $routers;
+    private array $routers;
 
     /**
      * Contains the last accepted router.
      *
      * @var RouterInterface|null
      */
-    private $lastAccepted;
+    private ?RouterInterface $lastAccepted = null;
 
     /**
      * Constructor.

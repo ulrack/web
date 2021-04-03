@@ -17,7 +17,7 @@ class PlainOutputConverter implements OutputConverterInterface
      *
      * @var string[]
      */
-    private $contentTypes;
+    private array $contentTypes;
 
     /**
      * Constructor.

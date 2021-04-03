@@ -22,28 +22,28 @@ class ErrorHandler implements ErrorHandlerInterface
      *
      * @var InputInterface
      */
-    private $input;
+    private InputInterface $input;
 
     /**
      * Contains a reference to the output.
      *
      * @var OutputInterface
      */
-    private $output;
+    private OutputInterface $output;
 
     /**
      * Contains the output handler.
      *
      * @var OutputHandlerInterface
      */
-    private $outputHandler;
+    private OutputHandlerInterface $outputHandler;
 
     /**
      * Contains the error registry.
      *
      * @var ErrorRegistryInterface
      */
-    private $errorRegistry;
+    private ErrorRegistryInterface $errorRegistry;
 
     /**
      * Constructor.
